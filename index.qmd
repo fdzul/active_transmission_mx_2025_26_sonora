@@ -27,7 +27,7 @@ library(magrittr)
 
 ::: panel-tabset
 
-### [**Hermosillo_heatmap**]{style="color:#990000"}
+### [**Hermosillo**]{style="color:#990000"}
 
 ```{r heatmap_hermosillo}
 z <- z |>
