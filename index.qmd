@@ -1,0 +1,110 @@
+---
+title: "Programa de Prevención & Control del Dengue | 2025"
+format: 
+  dashboard:
+      nav-buttons: [twitter, github, facebook]
+theme: custom.scss
+---
+
+```{r setup}
+library(sf)
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+if(as.vector(Sys.info()["sysname"]) == "Darwin"){
+load("~/OneDrive/proyects/geocoding_mex/2025/8.RData/denmex_2025.RData")
+} else if(as.vector(Sys.info()["sysname"]) == "Windows"){
+   load("D:\\OneDrive\\proyects\\geocoding_mex\\2024\\8.RData\\denmex_2024.RData")
+} else if(as.vector(Sys.info()["sysname"]) == "Linux"){
+    
+}
+library(magrittr)
+```
+
+
+
+
+# [**Mapas de Calor**]{style="font-size:8pt"}
+
+::: panel-tabset
+
+### [**Hermosillo_heatmap**]{style="color:#990000"}
+
+```{r heatmap_hermosillo}
+z <- z |>
+    dplyr::filter(accuracy != "locality")
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "26",
+                   locality = "Hermosillo",
+                   status_caso = c(1, 2),
+                   kernel = 200,
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+
+### [**Hermosillo**]{style="color:#990000"}
+
+```{r heatmap_cd_obregon}
+z <- z |>
+    dplyr::filter(accuracy != "locality")
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "26",
+                   locality = "Ciudad Obregón",
+                   status_caso = c(1, 2),
+                   kernel = 200,
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+
+
+### [**Guaymas**]{style="color:#990000"}
+
+```{r heatmap_guaymas}
+z <- z |>
+    dplyr::filter(accuracy != "locality")
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "26",
+                   locality = "Heroica Guaymas",
+                   status_caso = c(1, 2),
+                   kernel = 200,
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+
+### [**Navojoa**]{style="color:#990000"}
+
+```{r heatmap_navojoa}
+z <- z |>
+    dplyr::filter(accuracy != "locality")
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "26",
+                   locality = "Navojoa",
+                   status_caso = c(1, 2),
+                   kernel = 200,
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+
+
+
+:::
+
