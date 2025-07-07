@@ -10,13 +10,7 @@ theme: custom.scss
 library(sf)
 mapview::mapviewOptions(default = TRUE,
                         basemaps.color.shuffle = FALSE)
-if(as.vector(Sys.info()["sysname"]) == "Darwin"){
-load("~/OneDrive/proyects/geocoding_mex/2025/8.RData/denmex_2025.RData")
-} else if(as.vector(Sys.info()["sysname"]) == "Windows"){
-   load("D:\\OneDrive\\proyects\\geocoding_mex\\2024\\8.RData\\denmex_2024.RData")
-} else if(as.vector(Sys.info()["sysname"]) == "Linux"){
-    
-}
+load("~/Documents/geocoding_mx/2025/8.RData/denmex_2025.RData")
 library(magrittr)
 ```
 
@@ -32,7 +26,7 @@ library(magrittr)
 ```{r heatmap_hermosillo}
 z <- z |>
     dplyr::filter(accuracy != "locality")
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Hermosillo",
                    status_caso = c(1, 2),
@@ -51,7 +45,7 @@ densnv::mp_heatmap(geocoded_datasets = z,
 ```{r heatmap_cd_obregon}
 z <- z |>
     dplyr::filter(accuracy != "locality")
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Ciudad Obregón",
                    status_caso = c(1, 2),
@@ -71,7 +65,7 @@ densnv::mp_heatmap(geocoded_datasets = z,
 ```{r heatmap_guaymas}
 z <- z |>
     dplyr::filter(accuracy != "locality")
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Heroica Guaymas",
                    status_caso = c(1, 2),
@@ -90,7 +84,7 @@ densnv::mp_heatmap(geocoded_datasets = z,
 ```{r heatmap_navojoa}
 z <- z |>
     dplyr::filter(accuracy != "locality")
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Navojoa",
                    status_caso = c(1, 2),
