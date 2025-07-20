@@ -40,7 +40,7 @@ densnv::mp_heatmap(geocoded_dataset = z,
 ```
 
 
-### [**Hermosillo**]{style="color:#990000"}
+### [**Ciudad Obregón**]{style="color:#990000"}
 
 ```{r heatmap_cd_obregon}
 z <- z |>
@@ -49,7 +49,7 @@ densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Ciudad Obregón",
                    status_caso = c(1, 2),
-                   kernel = 200,
+                   kernel = 1200,
                    week = c(1:53),
                    zoom = NULL,
                    map_type = NULL,
@@ -69,7 +69,7 @@ densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Heroica Guaymas",
                    status_caso = c(1, 2),
-                   kernel = 200,
+                   kernel = 700,
                    week = c(1:53),
                    zoom = NULL,
                    map_type = NULL,
