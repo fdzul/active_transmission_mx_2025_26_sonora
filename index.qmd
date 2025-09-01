@@ -6,7 +6,7 @@ format:
 theme: custom.scss
 ---
 
-```{r setup}
+```{r setup_sonora}
 library(sf)
 mapview::mapviewOptions(default = TRUE,
                         basemaps.color.shuffle = FALSE)
@@ -49,7 +49,7 @@ densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "26",
                    locality = "Ciudad Obregón",
                    status_caso = c(1, 2),
-                   kernel = 1200,
+                   kernel = 00,
                    week = c(1:53),
                    zoom = NULL,
                    map_type = NULL,
